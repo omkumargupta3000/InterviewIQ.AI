@@ -11,8 +11,12 @@ import paymentRouter from "./routes/payment.route.js"
 
 const app = express()
 app.use(cors({
-    origin:"http://localhost:5174",
-    credentials:true
+    origin: [
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "https://interview-iq-ai-jet.vercel.app"
+    ],
+    credentials: true
 }))
 
 app.use(express.json())
